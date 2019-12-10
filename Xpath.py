@@ -28,10 +28,9 @@ html = etree.HTML(getPage(url))
 title = html.xpath('//div[@id="title"]/text()')
 context = html.xpath('//div[@id="content"]/text()')
 
-<<<<<<< HEAD
+
 write_to_file(title[0]) # 因为title只有一个，而xpath提取出来会放在数组里，所以只用写第一个
-=======
->>>>>>> 9a67607435788f610ac4cb2af2c80e90199df2b9
+
 for a in context:
     a = a+''#change to String
     write_to_file(a.strip()) #去除字符串前后中的一些非打印字符
