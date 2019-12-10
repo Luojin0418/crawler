@@ -1,3 +1,8 @@
+'''
+只能根据网页上的排版来写入文件，无法自定义格式。
+'''
+
+
 import requests
 import re
 from lxml import etree
@@ -33,4 +38,4 @@ write_to_file(title[0])
 print(context)
 for a in context:
     a = a+''#change to String
-    # write_to_file(re.sub('\r\n\xa0\xa0\xa0\xa0','\n',a))
+    write_to_file(a)
