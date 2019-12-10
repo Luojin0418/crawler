@@ -28,7 +28,6 @@ html = etree.HTML(getPage(url))
 title = html.xpath('//div[@id="title"]/text()')
 context = html.xpath('//div[@id="content"]/text()')
 
-print(context)
 for a in context:
     a = a+''#change to String
     write_to_file(a.strip()) #去除字符串前后中的一些非打印字符
