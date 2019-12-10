@@ -1,7 +1,3 @@
-'''
-只能根据网页上的排版来写入文件，无法自定义格式。
-'''
-
 
 import requests
 import re
@@ -31,11 +27,8 @@ html = etree.HTML(getPage(url))
 #会把每一次取出来的东西放在List里面
 title = html.xpath('//div[@id="title"]/text()')
 context = html.xpath('//div[@id="content"]/text()')
-#context = context.replaceAll('\r\n\xa0\xa0\xa0\xa0','')
-# print(title)
-# print(context[4])
-write_to_file(title[0])
+
 print(context)
 for a in context:
     a = a+''#change to String
-    write_to_file(a)
+    write_to_file(a.strip()) #去除字符串前后中的一些非打印字符
