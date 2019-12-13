@@ -20,7 +20,16 @@ def write_to_file(content):
         f.write(content+'\n')
 
 
+# 读取首页并爬取所有的链接
+url0 = "https://www.wenku8.net/novel/1/1973/"
+html0 = etree.HTML(getPage(url0))
 
+herf = html0.xpath('//td/a/@href')
+title0 = html0.xpath('//td[@class="ccss"]/a/text()')
+print(herf)
+print(title0)
+
+# 爬取某一页上的内容
 url = "https://www.wenku8.net/novel/1/1973/69567.htm"
 html = etree.HTML(getPage(url))
 
