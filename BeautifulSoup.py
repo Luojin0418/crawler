@@ -13,11 +13,6 @@ def getPage(url):
     print('wrong connection')
     return None
 
-def write_to_file(content):
-    with open('spider.txt', 'a', encoding='utf-8') as f:
-        f.write(content+'\n')
-
-
 url = 'https://maoyan.com/board'
 html = getPage(url)
 soup = BeautifulSoup(html, 'lxml')
