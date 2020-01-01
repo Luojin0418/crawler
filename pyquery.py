@@ -1,3 +1,5 @@
+# 不能命名为pyquery.py, 否者无法运行, 会和库里的pyquery重复, 导致提示import失败
+
 import os
 from pyquery import PyQuery as py
 
